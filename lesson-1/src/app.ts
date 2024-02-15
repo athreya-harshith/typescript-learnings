@@ -1,3 +1,35 @@
+//Classes
+
+class Invoice 
+{ // all these properties are public 
+    client:string;
+    details:string;
+    amount:number;
+    
+    constructor(c:string,d:string,a:number)
+    {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+
+    format()
+    {
+        return `${this.client} owes $${this.amount} for ${this.details}`
+    }
+}
+
+const invOne = new Invoice('Athreya ','daily snacks ',500)
+const invTwo = new Invoice('Harshith ','lunches',150)
+
+console.log(invOne)
+console.log(invTwo)
+
+const invoices : Invoice[] = []
+// invTwo.client = 'Athreya' one can change the values as they are public properties
+invoices.push(invOne,invTwo)
+
+console.log(invoices, 'invoice array')
 let anchor = document.querySelector('a')
 console.log(anchor)
 // console.log(anchor.href) only this gives the error as it (anchor )might have null values 
