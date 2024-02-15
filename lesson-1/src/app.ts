@@ -1,7 +1,30 @@
 //Classes
 import {Invoice} from './classes/Invoice.js'
 
+interface IsPerson {
+    name:string;
+    age : number ;
+    speak(a:string) :void;
+    spend(a:number):number;
+}
 
+let person :IsPerson = {
+    name:'athreya',
+    age:21,
+    speak(text:string):void {
+        console.log(`i speak ${text}`)
+    },
+    spend(amount:number):number {
+        console.log(`I spend ${amount}`);
+        return amount;
+    }
+}
+console.log('interface person ',person)
+let anotherPerson : IsPerson; // can be later initialized that complies with the interface
+
+const greet = (person : IsPerson) =>{
+    // some task
+}
 const invOne = new Invoice('Athreya ','daily snacks ',500)
 const invTwo = new Invoice('Harshith ','lunches',150)
 

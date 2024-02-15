@@ -1,5 +1,21 @@
 //Classes
 import { Invoice } from './classes/Invoice.js';
+let person = {
+    name: 'athreya',
+    age: 21,
+    speak(text) {
+        console.log(`i speak ${text}`);
+    },
+    spend(amount) {
+        console.log(`I spend ${amount}`);
+        return amount;
+    }
+};
+console.log('interface person ', person);
+let anotherPerson; // can be later initialized that complies with the interface
+const greet = (person) => {
+    // some task
+};
 const invOne = new Invoice('Athreya ', 'daily snacks ', 500);
 const invTwo = new Invoice('Harshith ', 'lunches', 150);
 console.log(invOne);
