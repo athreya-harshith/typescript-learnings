@@ -2,13 +2,13 @@
 import { Invoice } from './classes/Invoice.js';
 import { ListTemplate } from './classes/ListTemplate.js';
 import { Payments } from './classes/Payments.js';
-let docOne;
-let docTwo;
-docOne = new Invoice('Athreya', 'some coffee', 80);
-docTwo = new Payments('Harshith ', 'some tea ', 50);
-let docs = [];
-docs.push(docOne, docTwo);
-console.log(docs, 'the docs complying with the interface');
+// let docOne :HasFormatter
+// let docTwo : HasFormatter
+// docOne = new Invoice('Athreya','some coffee',80)
+// docTwo = new Payments('Harshith ', 'some tea ',50)
+// let docs : HasFormatter[] = []
+// docs.push(docOne,docTwo)
+// console.log(docs, 'the docs complying with the interface')
 // const invOne = new Invoice('Athreya ','daily snacks ',500)
 // const invTwo = new Invoice('Harshith ','lunches',150)
 // console.log(invOne)
@@ -61,3 +61,23 @@ form.addEventListener('submit', (e) => {
     //     amount.valueAsNumber //this makes the value as a number
     // );
 });
+// GENERICS
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: 'athreya', age: 21 });
+console.log(docOne);
+// console.log(docOne.name) get error in ts if <T> is not used
+console.log(docOne.name);
+let docTwo = {
+    uid: 1212,
+    resourceName: 'person',
+    data: 'some string'
+};
+let docThree = {
+    uid: 1213,
+    resourceName: 'shopping list',
+    data: ['bread', 'milk']
+};
+console.log(docTwo, docThree);
