@@ -4,14 +4,14 @@ import { ListTemplate } from './classes/ListTemplate.js'
 import { Payments} from './classes/Payments.js'
 import { HasFormatter } from './interfaces/HasFormatter.js'
 
-let docOne :HasFormatter
-let docTwo : HasFormatter
-docOne = new Invoice('Athreya','some coffee',80)
-docTwo = new Payments('Harshith ', 'some tea ',50)
+// let docOne :HasFormatter
+// let docTwo : HasFormatter
+// docOne = new Invoice('Athreya','some coffee',80)
+// docTwo = new Payments('Harshith ', 'some tea ',50)
 
-let docs : HasFormatter[] = []
-docs.push(docOne,docTwo)
-console.log(docs, 'the docs complying with the interface')
+// let docs : HasFormatter[] = []
+// docs.push(docOne,docTwo)
+// console.log(docs, 'the docs complying with the interface')
 // const invOne = new Invoice('Athreya ','daily snacks ',500)
 // const invTwo = new Invoice('Harshith ','lunches',150)
 
@@ -79,3 +79,25 @@ form.addEventListener('submit',(e:Event)=>{
     //     amount.valueAsNumber //this makes the value as a number
     // );
 })
+
+// ENUMS
+
+enum ResourceType  {BOOK ,AUTHOR,SNACKS};
+interface Resource<T> {
+    uid:number,
+    resourceName : number,
+    data : T
+}
+
+let docTwo : Resource <string> = {
+    uid:1212,
+    resourceName:ResourceType.AUTHOR,
+    data:'some string'
+}
+
+let docThree : Resource <string[]> = {
+    uid:1213,
+    resourceName:ResourceType.SNACKS,
+    data:['bread','milk']
+}
+console.log(docTwo,docThree)
